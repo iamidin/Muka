@@ -28,6 +28,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/movie_image"
             android:scaleType="centerCrop"
+            android:src="@drawable/ic_placeholder"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />

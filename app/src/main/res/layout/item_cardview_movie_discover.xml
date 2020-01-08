@@ -27,6 +27,7 @@
             android:layout_height="135dp"
             android:contentDescription="@string/movie_image"
             android:scaleType="fitCenter"
+            android:src="@drawable/ic_placeholder"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
@@ -45,6 +46,10 @@
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:shadowColor = "@android:color/darker_gray"
+            android:shadowDx = "1"
+            android:shadowDy = "1"
+            android:shadowRadius = "5"
             card_view:layout_constraintBottom_toBottomOf="@+id/img_movie_poster"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
