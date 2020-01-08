@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Muka</string>
+    <string name="movie_image">Gambar Film</string>
+    <string name="movie_name">Nama Film</string>
+    <string name="movie_description">Deskripsi Film</string>
+    <string name="title_tv_show">TV Show</string>
+    <string name="synopsis">Sinopsis</string>
+    <string name="rating">Peringkat</string>
+    <string name="back">Kembali</string>
+    <string name="now_playing">Sekarang Tayang</string>
+    <string name="tv_popular">Populer</string>
+    <string name="tv_coming_soon">Segera Datang</string>
+    <string name="movie_rating">5.0</string>
+    <string name="title_search">Cari</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="change_language">Ubah Bahasa</string>
+    <string name="title_movie">Film</string>
+    <string name="title_detail_movie">Detail Film</string>
+    <string name="movie_discover">Discover</string>
+    <string name="popularity">Popularitas</string>
+    <string name="vote_count">1999</string>
+    <string name="vote">Suara</string>
+    <string name="adult">R</string>
+    <string name="movie_year">2019</string>
+    <string name="top_rated">Teratas</string>
+    <string name="tvshow_image">TV Show Gambar</string>
+    <string name="tvshow_name">TV Show Name</string>
+    <string name="overview">Gambaran</string>
+</resources>
