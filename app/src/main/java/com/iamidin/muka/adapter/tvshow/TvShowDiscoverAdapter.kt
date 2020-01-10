@@ -37,6 +37,7 @@ class TvShowDiscoverAdapter(private val tvShowList: List<TvShow>) :
                 tv_tvshow_name.text = item.name.toUpperCase()
                 Glide.with(itemView.context)
                     .load(Constants.API.IMAGE_BASE_URL + Constants.API.IMAGE_SMALL_SIZE + item.backdropPath)
+                    .placeholder(R.drawable.ic_placeholder)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(img_tvshow_poster)
 

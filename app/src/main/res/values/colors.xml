@@ -6,4 +6,5 @@
     <color name="colorBase">#FFFFFF</color>
     <color name="colorText">#7F8081</color>
     <color name="colorTransparent">#20535353</color>
+    <color name="placeholder_color">#dddddd</color>
 </resources>

@@ -36,6 +36,7 @@ class MoviePopularAdapter(private val movieList: List<Movie>) :
             with(itemView) {
                 Glide.with(itemView.context)
                     .load(Constants.API.IMAGE_BASE_URL + Constants.API.IMAGE_SMALL_SIZE + item.posterPath)
+                    .placeholder(R.drawable.ic_placeholder)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(img_photo)
 

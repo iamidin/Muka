@@ -64,7 +64,7 @@ class MovieFragment : Fragment() {
 
     private fun subscribeUI() {
         discoverViewModel.isLoading.observe(viewLifecycleOwner, Observer {
-            showLoading(it)
+            showLoading(it, "discover")
         })
 
         discoverViewModel.movieLiveData.observe(viewLifecycleOwner, Observer {
@@ -72,7 +72,7 @@ class MovieFragment : Fragment() {
         })
 
         nowPlayingViewModel.isLoading.observe(viewLifecycleOwner, Observer {
-            showLoading(it)
+            showLoading(it, "now_playing")
         })
 
         nowPlayingViewModel.movieLiveData.observe(viewLifecycleOwner, Observer {
@@ -80,7 +80,7 @@ class MovieFragment : Fragment() {
         })
 
         popularViewModel.isLoading.observe(viewLifecycleOwner, Observer {
-            showLoading(it)
+            showLoading(it, "popular")
         })
 
         popularViewModel.movieLiveData.observe(viewLifecycleOwner, Observer {
@@ -88,11 +88,47 @@ class MovieFragment : Fragment() {
         })
     }
 
-    private fun showLoading(state: Boolean) {
-        progress_bar.visibility = if (state) {
-            View.VISIBLE
+    private fun showLoading(state: Boolean, shimmerId: String) {
+        if (state) {
+            when (shimmerId) {
+                "discover" -> {
+                    shimmer_layout_discover.visibility = View.VISIBLE
+                    shimmer_layout_discover.startShimmer()
+                    tv_title_discover.visibility = View.INVISIBLE
+                }
+
+                "now_playing" -> {
+                    shimmer_layout_nowplaying.visibility = View.VISIBLE
+                    shimmer_layout_nowplaying.startShimmer()
+                    tv_title_now_playing.visibility = View.INVISIBLE
+                }
+
+                "popular" -> {
+                    shimmer_layout_popular.visibility = View.VISIBLE
+                    shimmer_layout_popular.startShimmer()
+                    tv_title_popular.visibility = View.INVISIBLE
+                }
+            }
         } else {
-            View.INVISIBLE
+            when (shimmerId) {
+                "discover" -> {
+                    shimmer_layout_discover.stopShimmer()
+                    shimmer_layout_discover.visibility = View.INVISIBLE
+                    tv_title_discover.visibility = View.VISIBLE
+                }
+
+                "now_playing" -> {
+                    shimmer_layout_nowplaying.stopShimmer()
+                    shimmer_layout_nowplaying.visibility = View.INVISIBLE
+                    tv_title_now_playing.visibility = View.VISIBLE
+                }
+
+                "popular" -> {
+                    shimmer_layout_popular.stopShimmer()
+                    shimmer_layout_popular.visibility = View.INVISIBLE
+                    tv_title_popular.visibility = View.VISIBLE
+                }
+            }
         }
 
     }

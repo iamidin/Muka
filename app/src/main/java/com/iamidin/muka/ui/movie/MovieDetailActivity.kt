@@ -59,6 +59,7 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun loadCover(backdropPath: String) {
         Glide.with(this)
             .load(Constants.API.IMAGE_BASE_URL + Constants.API.COVER_IMAGE_MEDIUM_SIZE + backdropPath)
+            .placeholder(R.drawable.ic_placeholder)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(img_movie_cover_photo)
     }
@@ -66,6 +67,7 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun loadPoster(posterPath: String) {
         Glide.with(this)
             .load(Constants.API.IMAGE_BASE_URL + Constants.API.COVER_IMAGE_SMALL_SIZE + posterPath)
+            .placeholder(R.drawable.ic_placeholder)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(img_movie_photo)
     }

@@ -14,7 +14,7 @@
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="8dp"
-    card_view:cardElevation="8dp">
+    card_view:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
