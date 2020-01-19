@@ -10,14 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iamidin.muka.R
+import com.iamidin.muka.adapter.tvshow.TvShowAdapter
 import com.iamidin.muka.adapter.tvshow.TvShowDiscoverAdapter
-import com.iamidin.muka.adapter.tvshow.TvShowPopularAdapter
-import com.iamidin.muka.adapter.tvshow.TvShowTopRatedAdapter
 import com.iamidin.muka.model.TvShow
 import com.iamidin.muka.viewmodel.tvshow.TvShowDiscoverViewModel
 import com.iamidin.muka.viewmodel.tvshow.TvShowPopularViewModel
 import com.iamidin.muka.viewmodel.tvshow.TvShowTopRatedViewModel
 import kotlinx.android.synthetic.main.fragment_tv_show.*
+import java.util.*
 
 class TvShowFragment : Fragment() {
 
@@ -35,7 +35,7 @@ class TvShowFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        changeToolbarTitle(resources.getString(R.string.app_name) + " " + resources.getString(R.string.title_tv_show))
+        changeToolbarTitle(resources.getString(R.string.app_name).toUpperCase(Locale.getDefault()) + " " + resources.getString(R.string.title_tv_show).toUpperCase(Locale.getDefault()))
 
         discoverViewModel = ViewModelProvider(this).get(TvShowDiscoverViewModel::class.java)
         topRatedViewModel = ViewModelProvider(this).get(TvShowTopRatedViewModel::class.java)
@@ -140,18 +140,16 @@ class TvShowFragment : Fragment() {
             "discover" -> {
                 val adapter = TvShowDiscoverAdapter(tvList)
                 rv_tv_show_discover.adapter = adapter
-
             }
 
             "top_rated" -> {
-                val adapter = TvShowTopRatedAdapter(tvList)
+                val adapter = TvShowAdapter(tvList)
                 rv_tv_show_top_rated.adapter = adapter
-
             }
-            "popular" -> {
-                val adapter = TvShowPopularAdapter(tvList)
-                rv_tv_show_popular.adapter = adapter
 
+            "popular" -> {
+                val adapter = TvShowAdapter(tvList)
+                rv_tv_show_popular.adapter = adapter
             }
         }
     }

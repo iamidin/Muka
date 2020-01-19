@@ -24,9 +24,9 @@
         <ImageView
             android:id="@+id/img_photo"
             android:layout_width="0dp"
-            android:layout_height="150dp"
+            android:layout_height="250dp"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/movie_image"
+            android:contentDescription="@string/tvshow_image"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_placeholder"
             card_view:layout_constraintEnd_toEndOf="parent"
@@ -38,70 +38,80 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:fontFamily="@font/roboto"
             android:maxLines="1"
-            android:text="@string/movie_name"
-            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/tvshow_name"
+            android:textColor="@android:color/white"
+            android:shadowColor = "@android:color/black"
+            android:shadowDx = "1"
+            android:shadowDy = "1"
+            android:shadowRadius = "3"
             android:textSize="18sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/img_photo"
-            tools:text="@string/movie_name" />
+            card_view:layout_constraintTop_toTopOf="@+id/img_photo"
+            tools:text="@string/tvshow_name" />
 
-        <TextView
-            android:id="@+id/tv_overview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="16dp"
-            android:ellipsize="end"
-            android:fontFamily="@font/roboto"
-            android:maxLines="1"
-            android:text="@string/movie_description"
-            android:textColor="@color/colorText"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_name"
-            tools:text="@string/movie_description" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#33000000"
+            card_view:layout_constraintBottom_toBottomOf="@+id/img_photo">
 
-        <TextView
-            android:id="@+id/tv_year"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/rounded_corner"
-            android:ellipsize="end"
-            android:fontFamily="@font/roboto"
-            android:text="@string/movie_year"
-            android:textColor="@android:color/black"
-            android:textSize="12sp"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_overview"
-            tools:text="@string/movie_year" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_corner"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/movie_year"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    tools:text="@string/movie_year" />
+                <RatingBar
+                    android:id="@+id/rb_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.1"/>
+            </LinearLayout>
 
-        <RatingBar
-            android:id="@+id/rb_rating"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_overview"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
-            android:isIndicator="true"
-            android:numStars="5"
-            android:stepSize="0.1"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/tv_year"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_overview" />
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto"
+                android:maxLines="2"
+                android:text="@string/tvshow_description"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:shadowColor = "@android:color/black"
+                android:shadowDx = "1"
+                android:shadowDy = "1"
+                android:shadowRadius = "2"
+                tools:text="@string/tvshow_description" />
+        </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -19,10 +19,10 @@
         tools:layout="@layout/fragment_tv_show" />
 
     <fragment
-        android:id="@+id/navigation_search"
-        android:name="com.iamidin.muka.ui.search.SearchFragment"
+        android:id="@+id/navigation_favorite"
+        android:name="com.iamidin.muka.ui.favorite.MovieFavoriteFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_favorite" />
 
     <activity
         android:id="@+id/settingActivity"

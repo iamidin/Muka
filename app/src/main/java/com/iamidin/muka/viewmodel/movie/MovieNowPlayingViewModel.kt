@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.iamidin.muka.helper.Constants
+import com.iamidin.muka.model.Movie
 import com.iamidin.muka.networking.NetworkService
 import com.iamidin.muka.networking.response.MovieResponse
-import com.iamidin.muka.model.Movie
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,7 +16,6 @@ class MovieNowPlayingViewModel : ViewModel() {
     private val _movieLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
     val movieLiveData: LiveData<List<Movie>>
         get() = _movieLiveData
-
 
     private val _isLoading: MutableLiveData<Boolean> = MutableLiveData()
     val isLoading: LiveData<Boolean>

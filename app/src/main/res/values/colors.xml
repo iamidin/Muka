@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#011F46</color>
     <color name="colorAccent">#f7be16</color>
     <color name="colorBase">#FFFFFF</color>
-    <color name="colorText">#7F8081</color>
+    <color name="colorText">#494A4B</color>
     <color name="colorTransparent">#20535353</color>
     <color name="placeholder_color">#dddddd</color>
 </resources>

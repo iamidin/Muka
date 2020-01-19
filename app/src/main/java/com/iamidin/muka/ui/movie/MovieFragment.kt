@@ -10,14 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iamidin.muka.R
+import com.iamidin.muka.adapter.movie.MovieAdapter
 import com.iamidin.muka.adapter.movie.MovieDiscoverAdapter
-import com.iamidin.muka.adapter.movie.MovieNowPlayingAdapter
-import com.iamidin.muka.adapter.movie.MoviePopularAdapter
 import com.iamidin.muka.model.Movie
 import com.iamidin.muka.viewmodel.movie.MovieDiscoverViewModel
 import com.iamidin.muka.viewmodel.movie.MovieNowPlayingViewModel
 import com.iamidin.muka.viewmodel.movie.MoviePopularViewModel
 import kotlinx.android.synthetic.main.fragment_movie.*
+import java.util.*
 
 class MovieFragment : Fragment() {
 
@@ -36,7 +36,7 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        changeToolbarTitle(resources.getString(R.string.app_name) + " " + resources.getString(R.string.title_movie))
+        changeToolbarTitle(resources.getString(R.string.app_name).toUpperCase(Locale.getDefault()) + " " + resources.getString(R.string.title_movie).toUpperCase(Locale.getDefault()))
 
         discoverViewModel = ViewModelProvider(this).get(MovieDiscoverViewModel::class.java)
         nowPlayingViewModel = ViewModelProvider(this).get(MovieNowPlayingViewModel::class.java)
@@ -145,13 +145,13 @@ class MovieFragment : Fragment() {
             }
 
             "now_playing" -> {
-                val adapter = MovieNowPlayingAdapter(movieList)
+                val adapter = MovieAdapter(movieList)
                 rv_movies_now_playing.adapter = adapter
 
             }
 
             "popular" -> {
-                val adapter = MoviePopularAdapter(movieList)
+                val adapter = MovieAdapter(movieList)
                 rv_movies_popular.adapter = adapter
 
             }

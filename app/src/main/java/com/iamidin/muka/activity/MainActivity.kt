@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.iamidin.muka.R
 
 class MainActivity : AppCompatActivity() {
@@ -21,13 +21,11 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_movie,
                 R.id.navigation_tv_show,
-                R.id.navigation_search
+                R.id.navigation_favorite
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -42,9 +40,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_settings) {
-            val mIntent = Intent(this, SettingActivity::class.java)
-            startActivity(mIntent)
+        when (item.itemId) {
+            R.id.menu_settings -> {
+                val mIntent = Intent(this, SettingActivity::class.java)
+                startActivity(mIntent)
+            }
+
+//            R.id.home -> {
+//                onBackPressed()
+//                return true
+//            }
         }
         return super.onOptionsItemSelected(item)
     }

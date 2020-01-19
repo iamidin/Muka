@@ -49,7 +49,7 @@
             android:shadowColor = "@android:color/darker_gray"
             android:shadowDx = "1"
             android:shadowDy = "1"
-            android:shadowRadius = "5"
+            android:shadowRadius = "3"
             card_view:layout_constraintBottom_toBottomOf="@+id/img_tvshow_poster"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"

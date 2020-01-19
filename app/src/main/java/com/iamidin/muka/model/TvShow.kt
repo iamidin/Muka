@@ -2,35 +2,81 @@ package com.iamidin.muka.model
 
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
+@Entity(tableName = "favorite_tv_show")
 data class TvShow(
-    @SerializedName("backdrop_path")
-    val backdropPath: String,
-    @SerializedName("first_air_date")
-    val firstAirDate: String,
-    @SerializedName("genre_ids")
-    val genreIds: List<Int>,
+    @PrimaryKey
     @SerializedName("id")
-    val id: Int,
+    var id: Int,
+
+    @ColumnInfo(name = "name")
     @SerializedName("name")
-    val name: String,
-    @SerializedName("origin_country")
-    val originCountry: List<String>,
-    @SerializedName("original_language")
-    val originalLanguage: String,
+    var name: String,
+
+    @ColumnInfo(name = "original_name")
     @SerializedName("original_name")
-    val originalName: String,
+    var originalName: String,
+
+    @ColumnInfo(name = "overview")
     @SerializedName("overview")
-    val overview: String,
-    @SerializedName("popularity")
-    val popularity: Double,
+    var overview: String,
+
+    @ColumnInfo(name = "poster_path")
     @SerializedName("poster_path")
-    val posterPath: String,
+    var posterPath: String,
+
+    @ColumnInfo(name = "backdrop_path")
+    @SerializedName("backdrop_path")
+    var backdropPath: String,
+
+    @ColumnInfo(name = "first_air_date")
+    @SerializedName("first_air_date")
+    var firstAirDate: String,
+
+    @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average")
-    val voteAverage: Double,
+    var voteAverage: Double,
+
+    @ColumnInfo(name = "original_language")
+    @SerializedName("original_language")
+    var originalLanguage: String,
+
+    @ColumnInfo(name = "popularity")
+    @SerializedName("popularity")
+    var popularity: Double,
+
+    @ColumnInfo(name = "vote_count")
     @SerializedName("vote_count")
-    val voteCount: Int
-) : Parcelable
+    var voteCount: Int,
+
+    @Ignore
+    @SerializedName("origin_country")
+    var originCountry: List<String>,
+
+    @Ignore
+    @SerializedName("genre_ids")
+    var genreIds: List<Int>
+) : Parcelable {
+    constructor() : this(
+        0,
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        0.0,
+        "",
+        0.0,
+        0,
+        arrayListOf(),
+        arrayListOf()
+    )
+}

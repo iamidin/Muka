@@ -14,8 +14,8 @@ import com.iamidin.muka.model.Movie
 import com.iamidin.muka.ui.movie.MovieDetailActivity
 import kotlinx.android.synthetic.main.item_cardview_movie.view.*
 
-class MoviePopularAdapter(private val movieList: List<Movie>) :
-    RecyclerView.Adapter<MoviePopularAdapter.MovieViewHolder>() {
+class MovieAdapter(private val movieList: List<Movie>) :
+    RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_movie, parent, false)

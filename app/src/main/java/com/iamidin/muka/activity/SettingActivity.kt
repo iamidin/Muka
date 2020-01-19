@@ -1,13 +1,15 @@
 package com.iamidin.muka.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.iamidin.muka.R
 import kotlinx.android.synthetic.main.activity_setting.*
+import java.util.*
+
 
 class SettingActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -15,10 +17,14 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         val btnChangeLanguage: Button = btn_change_language
         btnChangeLanguage.setOnClickListener(this)
 
-        changeToolbarTitle(resources.getString(R.string.app_name) + " " + resources.getString(R.string.title_settings))
+        changeToolbarTitle(resources.getString(R.string.app_name).toUpperCase(Locale.getDefault()) + " " + resources.getString(R.string.title_settings).toUpperCase(
+            Locale.getDefault()))
 
     }
 
@@ -33,5 +39,10 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(mIntent)
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
